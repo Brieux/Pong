@@ -3,3 +3,17 @@ body {
     color: white;
     font-family: monospace
 }
+
+#field{
+    border: 1px solid white;
+
+    width: 800px;
+    height: 400px;
+}
+
+#ball{
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius:10px;
+}
