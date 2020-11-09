@@ -3,6 +3,13 @@ body {
     background: black;
     color: white;
     font-family: monospace
+    /** centrer les elements **/
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 #terrain{
