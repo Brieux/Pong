@@ -1,0 +1,36 @@
+body {
+    /** couleurs & font **/
+    background: black;
+    color: white;
+    font-family: monospace;
+    /** centrer les elements **/
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#terrain{
+    /** Bordeure et terrain de jeu **/
+    position:relative ;
+    border: 1px solid white;
+    width: 800px;
+    height: 400px;
+}
+
+.fluo{
+    border-color: #0f0 !important;
+}
+
+#balle{
+    /** CSS relatif a la balle **/
+    position: absolute;
+    top: 50%;
+    left:50%;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius:100%;
+}
