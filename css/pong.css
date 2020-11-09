@@ -2,7 +2,7 @@ body {
     /** couleurs & font **/
     background: black;
     color: white;
-    font-family: monospace
+    font-family: monospace;
     /** centrer les elements **/
     display: flex;
     min-height: 100vh;
