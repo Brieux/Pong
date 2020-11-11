@@ -8,7 +8,17 @@ class Balle{
         this.rayon = parseInt(this.$element.css("width"));
         this.vitesseX = (Math.random()* 8) -4;
         this.vitesseY = (Math.random()* 8) -4;
+        this.centreX = this.positionX;
+        this.centreY = this.positionY
         
+    }
+
+    //fonction permettant de reset la balle au centre après un point marqué
+    retourCentre(){
+        this.positionX =  this.centreX;
+        this.positionY =  this.centreY;
+        this.vitesseX = (Math.random()* 8) -4;
+        this.vitesseY = (Math.random()* 8) -4;
     }
 
     //fonction de calcul de deplacement
@@ -24,16 +34,21 @@ class Balle{
     }
 
     //fonction permettant de faire rebondir la balle sur les mur et de changer la couleur du terrain lors du contact
-    rebond(terrain){
-        if(this.positionX <= 0 || this.positionX >= terrain.largeur-this.rayon){
-            this.vitesseX = this.vitesseX * (-1);
-            terrain.$element.addClass("fluo");
-            setTimeout(
-                function(){
-                    terrain.$element.removeClass("fluo");
-                },250
-            );
+    rebond(terrain, joueur0, joueur1){
+        //impact avec un bords de terrain coté joueur
+        if(this.positionX <= 0 ||this.positionX >= terrain.largeur-this.rayon){
+            if(this.positionX <= 0){
+                joueur1.ajoutScore();
+                console.log("Le joueur de droite marque 1 point");
+            }
+            if(this.positionX >= terrain.largeur-this.rayon){
+                joueur0.ajoutScore();
+                console.log("Le joueur de gauche marque 1 point");
+            }
+            //retour de la balle au centre;
+            this.retourCentre();
         }
+        //rebond sur les plafond et sol
         if(this.positionY <= 0 || this.positionY >= terrain.hauteur-this.rayon){
             this.vitesseY = this.vitesseY * (-1);
             terrain.$element.addClass("fluo");
