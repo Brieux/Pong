@@ -48,12 +48,12 @@ body {
     background-color: #ffffff;
 }
 
-#droite{
+#gauche{
     /**Precision pour la raquette d'id droite**/
     left:1%;
 }
 
-#gauche{
+#droite{
     /**Precision pour la raquette d'id gauche**/
     right: 1%;
 }

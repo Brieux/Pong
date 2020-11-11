@@ -46,4 +46,9 @@ class Balle{
         }
     
     }
+    //fonction permettant le rebond sur les raquettes
+    rebondSurRaquette(raquette){
+        //zone pour la raquette de droite
+        //zone pour la raquette de gauche
+    }
 }

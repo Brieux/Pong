@@ -2,12 +2,23 @@
 class Raquette{
     //constructeur de la classe Raquette
     constructor($element){
-        this.$element = $element
+        this.$element = $element;
         this.hauteur = $element.height();
         this.largeur =$element.width();
         this.positionX = parseInt(this.$element.css("left"));
         this.positionY = parseInt(this.$element.css("top"));
         this.vitesseY = 1;
+        this.gauche = true; //boolean pour savoir si c'est le joueur de droite ou de gauche(true = joueur de gauche/ false = joueur de droite)
+
+    }
+    //fonction permettant de definir le joueur (cf constructor)
+    checkJoueur(terrain){
+        if ((this.positionX < terrain.largeur/2) == true){
+            this.gauche = true;
+        }
+        else{
+            this.gauche = false;
+        }
     }
     //fonction permettant de faire bouger les deux raquette de haut en bas
     bouger(terrain){
