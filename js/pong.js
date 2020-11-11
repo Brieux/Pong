@@ -11,16 +11,16 @@ raquetteDroite.checkJoueur(terrain);
 setInterval(function(){
     balle.bouger();
     balle.rebond(terrain);
+    balle.rebondSurRaquette(raquetteDroite);
+    balle.rebondSurRaquette(raquetteGauche);
     balle.majHTML();
 
     raquetteDroite.bouger(terrain);
     raquetteGauche.bouger(terrain);
-    raquetteDroite.majHTML();
-    raquetteGauche.majHTML();
-
+    
     raquetteDroite.mouvementJoueur(terrain);
     raquetteGauche.mouvementJoueur(terrain);
-   
-    balle.rebondSurRaquette(raquetteDroite);
-    balle.rebondSurRaquette(raquetteGauche);
+    
+    raquetteGauche.majHTML();
+    raquetteDroite.majHTML();
 }, 10);

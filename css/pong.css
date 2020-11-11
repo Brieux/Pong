@@ -48,6 +48,9 @@ body {
     background-color: #ffffff;
 }
 
+.raquetteFluo{
+    background-color: rgb(0, 255, 0) !important;
+}
 #gauche{
     /**Precision pour la raquette d'id droite**/
     left:1%;

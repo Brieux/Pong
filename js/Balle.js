@@ -48,7 +48,41 @@ class Balle{
     }
     //fonction permettant le rebond sur les raquettes
     rebondSurRaquette(raquette){
-        //zone pour la raquette de droite
         //zone pour la raquette de gauche
+        if(raquette.gauche){
+            if ((this.positionY >= raquette.positionY)&&(this.positionY <= raquette.positionY + raquette.hauteur)){
+                //console.log("passage dans la raquette de gauche");
+                if (this.positionX<= raquette.positionX + raquette.largeur){
+                   this.positionX = raquette.positionX + raquette.largeur + 1
+                    this.vitesseX = this.vitesseX * (-1);
+                    /*console.log("rebond sur raquette de gauche");
+                    changement de couleur lié a l'impact*/
+                    raquette.$element.addClass("raquetteFluo");
+                    setTimeout(
+                    function(){
+                        raquette.$element.removeClass("raquetteFluo");
+                    },200
+                    );
+                }
+            }
+        }
+        //zone pour la raquette de droite
+        else{
+            if ((this.positionY >= raquette.positionY)&&(this.positionY <= raquette.positionY + raquette.hauteur)){
+                //console.log("passage dans la raquette de droite");
+                if (this.positionX+this.rayon > raquette.positionX){
+                    this.positionX = raquette.positionX -this.rayon- 1
+                    this.vitesseX = this.vitesseX * (-1);
+                    /*console.log("rebond sur raquette de droite");
+                    changement de couleur lié a l'impact*/
+                    raquette.$element.addClass("raquetteFluo");
+                    setTimeout(
+                    function(){
+                        raquette.$element.removeClass("raquetteFluo");
+                    },200
+                    );
+                }
+            }
+        }
     }
 }
