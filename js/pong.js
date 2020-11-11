@@ -18,6 +18,9 @@ setInterval(function(){
     raquetteDroite.majHTML();
     raquetteGauche.majHTML();
 
+    raquetteDroite.mouvementJoueur(terrain);
+    raquetteGauche.mouvementJoueur(terrain);
+   
     balle.rebondSurRaquette(raquetteDroite);
     balle.rebondSurRaquette(raquetteGauche);
 }, 10);

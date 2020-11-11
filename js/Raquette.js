@@ -20,11 +20,24 @@ class Raquette{
             this.gauche = false;
         }
     }
-    //fonction permettant de faire bouger les deux raquette de haut en bas
+    //fonction permettant de faire bouger les deux raquette de haut en bas automatiquement
     bouger(terrain){
         this.positionY = this.positionY + this.vitesseY;
         if (this.positionY <= 0 || this.positionY + this.hauteur >= terrain.hauteur){
             this.vitesseY = this.vitesseY * -1
+        }
+    }
+
+    //fonction permettant aux joueur de faire bouger leur propre raquettes
+    mouvementJoueur(terrain){
+        //zone de controle du joueur de gauche avec A et Q
+        if (this.gauche){
+        
+        }
+
+        //zone de control du joueur de droite avec P et M
+        else{
+
         }
     }
 
