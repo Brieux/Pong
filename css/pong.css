@@ -16,12 +16,17 @@ body {
     /** Bordeure et terrain de jeu **/
     position:relative ;
     border: 1px solid white;
+    border-left-color: black ;
+    border-right-color: black ;
     width: 800px;
     height: 400px;
 }
 
 .fluo{
-    border-color: #0f0 !important;
+    /** Zone pour le changement de couleur lors des hits**/
+    
+    border-top-color: #0f0 !important;
+    border-bottom-color: #0f0 !important;
 }
 
 #balle{
@@ -33,4 +38,22 @@ body {
     height: 20px;
     background-color: white;
     border-radius:100%;
+}
+
+.raquette{
+    /** CSS relatif la classe raquette**/
+    position: absolute;
+    width: 10px;
+    height: 25%;
+    background-color: #ffffff;
+}
+
+#droite{
+    /**Precision pour la raquette d'id droite**/
+    left:1%;
+}
+
+#gauche{
+    /**Precision pour la raquette d'id gauche**/
+    right: 1%;
 }
