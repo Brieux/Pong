@@ -20,6 +20,10 @@ body {
     height: 400px;
 }
 
+.fluo{
+    border-color: #0f0 !important;
+}
+
 #balle{
     /** CSS relatif a la balle **/
     position: absolute;
