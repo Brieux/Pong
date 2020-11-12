@@ -28,7 +28,7 @@ class Raquette{
         }
     }
 
-    //fonction permettant aux joueur de faire bouger leur propre raquettes
+    //fonction permettant aux joueur de faire bouger leur propre raquette
     mouvementJoueur(terrain){
         //zone de controle du joueur de gauche avec A et Q
         if (this.gauche){
