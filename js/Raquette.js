@@ -7,7 +7,7 @@ class Raquette{
         this.largeur =$element.width();
         this.positionX = parseInt(this.$element.css("left"));
         this.positionY = parseInt(this.$element.css("top"));
-        this.vitesseY = 1;
+        this.vitesseY = 0;
         this.gauche = true; //boolean pour savoir si c'est le joueur de droite ou de gauche(true = joueur de gauche/ false = joueur de droite)
 
     }
@@ -23,21 +23,30 @@ class Raquette{
     //fonction permettant de faire bouger les deux raquette de haut en bas automatiquement
     bouger(terrain){
         this.positionY = this.positionY + this.vitesseY;
-        if (this.positionY <= 0 || this.positionY + this.hauteur >= terrain.hauteur){
-            this.vitesseY = this.vitesseY * -1
+    }
+
+    //fonction permettant d'arreter le deplacement de la raquette
+    arreterDeBouger(){
+        this.vitesseY = 0;
+    }
+
+    //fonction permettant de faire monter la raquette jusqu'au bord du haut
+    monter(){
+        if (this.positionY > 0){
+            this.vitesseY = -1;
+        }
+        else{
+            this.arreterDeBouger();
         }
     }
 
-    //fonction permettant aux joueur de faire bouger leur propre raquette
-    mouvementJoueur(terrain){
-        //zone de controle du joueur de gauche avec A et Q
-        if (this.gauche){
-            
+    //fonction permettant de faire descendre la raquette jusqu'au bord du haut
+    descendre(){
+        if (this.positionY + this.hauteur < terrain.hauteur){
+            this.vitesseY = 1;
         }
-
-        //zone de control du joueur de droite avec P et M
         else{
-
+            this.arreterDeBouger();
         }
     }
 

@@ -62,7 +62,13 @@ class Balle{
                 joueur0.ajoutScore();
                 console.log("Le joueur de gauche marque 1 point");
             }
-            //retour de la balle au centre;
+            //retour de la balle au centre et affichage des bords rouges;
+            terrain.$element.addClass("point");
+            setTimeout(
+                function(){
+                    terrain.$element.removeClass("point");
+                },350
+            );
             this.retourCentre();
         }
         //rebond sur les plafond et sol

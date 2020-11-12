@@ -29,6 +29,13 @@ body {
     border-bottom-color: #0f0 !important;
 }
 
+.point{
+    /** Zone pour le changement de couleur lors des points**/
+    
+    border-top-color: rgb(255, 0, 0) !important;
+    border-bottom-color: rgb(255, 0, 0) !important;
+}
+
 #balle{
     /** CSS relatif a la balle **/
     position: absolute;

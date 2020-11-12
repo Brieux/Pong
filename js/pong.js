@@ -24,9 +24,10 @@ setInterval(function(){
 
     raquetteDroite.bouger(terrain);
     raquetteGauche.bouger(terrain);
-    
-    raquetteDroite.mouvementJoueur(terrain);
-    raquetteGauche.mouvementJoueur(terrain);
+
+
+    joueur0.joue(raquetteGauche);
+    joueur1.joue(raquetteDroite);
     
     raquetteGauche.majHTML();
     raquetteDroite.majHTML();
