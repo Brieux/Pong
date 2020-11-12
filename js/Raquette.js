@@ -32,7 +32,7 @@ class Raquette{
     mouvementJoueur(terrain){
         //zone de controle du joueur de gauche avec A et Q
         if (this.gauche){
-        
+            
         }
 
         //zone de control du joueur de droite avec P et M
