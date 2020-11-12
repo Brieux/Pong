@@ -5,15 +5,6 @@ class Joueur{
         this.score = 0;
     }
 
-    //fonction reliant le coté de la raquette au bon coté du joueur.
-    checkCote(raquette){
-        if (raquette.gauche){
-            this.cote = 0;
-        }
-        else{
-            this.cote = 1;
-        }
-    }
 
     ajoutScore(){
         this.score += 1;
@@ -44,6 +35,7 @@ class Joueur{
         }
         //coté droit
         else if (this.cote == 1){
+            console.log("test raquette droite");
             window.addEventListener("keydown", function (event) {
                 if (event.defaultPrevented) { return}
                 if(event.key == "p"){

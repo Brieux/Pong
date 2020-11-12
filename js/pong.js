@@ -7,8 +7,8 @@ let raquetteDroite = new Raquette($("#droite"));
 let raquetteGauche = new Raquette($("#gauche"));
 
 //attribution du boolean de positionnement du joueur
-joueur0.checkCote(raquetteGauche);
-joueur1.checkCote(raquetteDroite);
+joueur0.cote = 0;
+joueur1.cote = 1;
 
 raquetteGauche.checkJoueur(terrain);
 raquetteDroite.checkJoueur(terrain);
@@ -18,7 +18,6 @@ raquetteDroite.positionY = terrain.hauteur/2-(raquetteDroite.hauteur/2);
 
 //lancement boucle de jeu
 setInterval(function(){
-    console.log(balle.vitesseXFacteur);
     balle.bouger();
     balle.rebond(terrain, joueur0, joueur1);
     balle.rebondSurRaquette(raquetteDroite);
