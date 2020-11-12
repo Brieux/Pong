@@ -13,17 +13,20 @@ joueur1.checkCote(raquetteDroite);
 raquetteGauche.checkJoueur(terrain);
 raquetteDroite.checkJoueur(terrain);
 
+raquetteGauche.positionY = terrain.hauteur/2-(raquetteGauche.hauteur/2);
+raquetteDroite.positionY = terrain.hauteur/2-(raquetteDroite.hauteur/2);
 
 //lancement boucle de jeu
 setInterval(function(){
+    console.log(balle.vitesseXFacteur);
     balle.bouger();
     balle.rebond(terrain, joueur0, joueur1);
     balle.rebondSurRaquette(raquetteDroite);
     balle.rebondSurRaquette(raquetteGauche);
     balle.majHTML();
 
-    raquetteDroite.bouger(terrain);
     raquetteGauche.bouger(terrain);
+    raquetteDroite.bouger(terrain);
 
 
     joueur0.joue(raquetteGauche);

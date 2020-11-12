@@ -102,6 +102,7 @@ class Balle{
                         raquette.$element.removeClass("raquetteFluo");
                     },200
                     );
+                    this.calculVitesseX();
                 }
             }
         }
@@ -120,9 +121,9 @@ class Balle{
                         raquette.$element.removeClass("raquetteFluo");
                     },200
                     );
+                    this.calculVitesseX();
                 }
             }
         }
-        this.calculVitesseX;
     }
 }

@@ -28,12 +28,7 @@ class Joueur{
                 if(event.key == "a"){
                     raquette.monter();
                 }
-                event.preventDefault();
-              }, true);
-
-              window.addEventListener("keydown", function (event) {
-                if (event.defaultPrevented) { return}
-                if(event.key == "q"){
+                else if (event.key == "q"){
                     raquette.descendre();
                 }
                 event.preventDefault();
@@ -41,25 +36,20 @@ class Joueur{
 
               window.addEventListener("keyup", function (event) {
                 if (event.defaultPrevented) { return}
-                if(event.key == "a" && event.key == "q"){
+                if(event.key == "a" || event.key == "q"){
                     raquette.arreterDeBouger();
                 }
                 event.preventDefault();
               }, true);
         }
         //coté droit
-        else{
+        else if (this.cote == 1){
             window.addEventListener("keydown", function (event) {
                 if (event.defaultPrevented) { return}
                 if(event.key == "p"){
                     raquette.monter();
                 }
-                event.preventDefault();
-              }, true);
-
-              window.addEventListener("keydown", function (event) {
-                if (event.defaultPrevented) { return}
-                if(event.key == "m"){
+                else if (event.key =="m"){
                     raquette.descendre();
                 }
                 event.preventDefault();
