@@ -6,8 +6,10 @@ class Balle{
         this.positionX = parseInt(this.$element.css("left"));
         this.positionY = parseInt(this.$element.css("top"));
         this.rayon = parseInt(this.$element.css("width"));
-        this.vitesseX = (Math.random()* 8) -4;
-        this.vitesseY = (Math.random()* 8) -4;
+        this.vitesseXFacteur = 1;
+        this.limiteFacteur = 8 //faire en fonction de la largeur du terrain 
+        this.vitesseXSens = this.calculAleatoire();
+        this.vitesseY = (Math.random()*2)-1;
         this.centreX = this.positionX;
         this.centreY = this.positionY
         
@@ -17,13 +19,28 @@ class Balle{
     retourCentre(){
         this.positionX =  this.centreX;
         this.positionY =  this.centreY;
-        this.vitesseX = (Math.random()* 8) -4;
-        this.vitesseY = (Math.random()* 8) -4;
+        this.vitesseXSens = this.calculAleatoire();
+        this.vitesseXFacteur = 1;
+        this.vitesseY =(Math.random()*2)-1;
+    }
+
+    //fonction permettant de definir le sens de depart de la balle aléatoirement
+    calculAleatoire(){
+        return Math.random() < 0.5 ? 1 : -1; //c'est un genre de if : else
+    }
+
+    //fonction permettant de calculer la vitesse de X notamment l'acceleration
+    calculVitesseX(){
+        //rajout de 1 facteur
+        if (this.vitesseXFacteur < this.limiteFacteur){
+            this.vitesseXFacteur +=1; // faire en fonction de la largeur du terrain
+        }
+        else {/*rien car la vitesse ne peux pas depasser la limite*/}
     }
 
     //fonction de calcul de deplacement
     bouger(){
-        this.positionX = this.positionX + this.vitesseX;
+        this.positionX = this.positionX + (this.vitesseXFacteur * this.vitesseXSens);
         this.positionY = this.positionY + this.vitesseY;
     }
 
@@ -61,6 +78,7 @@ class Balle{
         }
     
     }
+
     //fonction permettant le rebond sur les raquettes
     rebondSurRaquette(raquette){
         //zone pour la raquette de gauche
@@ -69,7 +87,7 @@ class Balle{
                 //console.log("passage dans la raquette de gauche");
                 if (this.positionX<= raquette.positionX + raquette.largeur){
                    this.positionX = raquette.positionX + raquette.largeur + 1
-                    this.vitesseX = this.vitesseX * (-1);
+                    this.vitesseXSens = this.vitesseXSens * (-1);
                     /*console.log("rebond sur raquette de gauche");
                     changement de couleur lié a l'impact*/
                     raquette.$element.addClass("raquetteFluo");
@@ -87,7 +105,7 @@ class Balle{
                 //console.log("passage dans la raquette de droite");
                 if (this.positionX+this.rayon > raquette.positionX){
                     this.positionX = raquette.positionX -this.rayon- 1
-                    this.vitesseX = this.vitesseX * (-1);
+                    this.vitesseXSens = this.vitesseXSens * (-1);
                     /*console.log("rebond sur raquette de droite");
                     changement de couleur lié a l'impact*/
                     raquette.$element.addClass("raquetteFluo");
@@ -99,5 +117,6 @@ class Balle{
                 }
             }
         }
+        this.calculVitesseX;
     }
 }
