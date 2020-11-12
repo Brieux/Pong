@@ -34,8 +34,7 @@ class Joueur{
               }, true);
         }
         //coté droit
-        else if (this.cote == 1){
-            console.log("test raquette droite");
+        else{
             window.addEventListener("keydown", function (event) {
                 if (event.defaultPrevented) { return}
                 if(event.key == "p"){

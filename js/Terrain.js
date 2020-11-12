@@ -6,4 +6,9 @@ class Terrain{
         this.largeur = $element.width();
         this.hauteur = $element.height();
     }
+
+    jouer(joueur0, joueur1, raquetteGauche, raquetteDroite){
+        joueur1.joue(raquetteDroite);
+        joueur0.joue(raquetteGauche);
+    }
   }
