@@ -8,7 +8,33 @@ class Terrain{
     }
 
     jouer(joueur0, joueur1, raquetteGauche, raquetteDroite){
-        joueur1.joue(raquetteDroite);
-        joueur0.joue(raquetteGauche);
+        window.addEventListener("keydown", function (event) {
+            if (event.defaultPrevented) { return}
+            if(event.key == "a"){
+                raquetteGauche.monter();
+            }
+            else if (event.key == "q"){
+                raquetteGauche.descendre();
+            }
+            else if (event.key == "p"){
+                raquetteDroite.monter();
+            }
+            else if (event.key == "m"){
+                raquetteDroite.descendre();
+            }
+            event.preventDefault();
+          }, true);
+
+          window.addEventListener("keyup", function (event) {
+            if (event.defaultPrevented) { return}
+            if(event.key == "a" || event.key == "q"){
+                raquetteGauche.arreterDeBouger();
+            }
+            else if(event.key == "p" || event.key == "m"){
+                raquetteDroite.arreterDeBouger();
+            }
+            event.preventDefault();
+          }, true);
     }
   }
+  
