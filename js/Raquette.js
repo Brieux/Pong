@@ -32,20 +32,22 @@ class Raquette{
 
     //fonction permettant de faire monter la raquette jusqu'au bord du haut
     monter(){
-        if (this.positionY >= 0){
+        if (this.positionY > 0){
             this.vitesseY = -1;
         }
         else{
+            this.positionY = 0;
             this.arreterDeBouger();
         }
     }
 
     //fonction permettant de faire descendre la raquette jusqu'au bord du haut
     descendre(){
-        if (this.positionY + this.hauteur <= terrain.hauteur){
+        if (this.positionY + this.hauteur < terrain.hauteur){
             this.vitesseY = 1;
         }
         else{
+            this.positionY = terrain.hauteur - this.hauteur;
             this.arreterDeBouger();
         }
     }
