@@ -23,6 +23,7 @@ class Raquette{
     //fonction permettant de faire bouger les deux raquette de haut en bas automatiquement
     bouger(){
         this.positionY = this.positionY + this.vitesseY;
+        this.majHTML();
     }
 
     //fonction permettant d'arreter le deplacement de la raquette

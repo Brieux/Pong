@@ -9,8 +9,8 @@ class Balle{
         this.vitesseXFacteur = 1;
         this.limiteFacteur = 8 //faire en fonction de la largeur du terrain 
         this.vitesseXSens = this.calculAleatoire();
-        //this.vitesseYSens = (Math.random()*6) - 3; //entre -3 et 3 : 0 fais du tout droit
-        this.vitesseYSens = 0;
+        this.vitesseYSens = (Math.random()*6) - 3; //entre -3 et 3 : 0 fais du tout droit
+        //this.vitesseYSens = 0;
         this.vitesseYFacteur = 1;
         this.centreX = this.positionX;
         this.centreY = this.positionY
@@ -42,10 +42,13 @@ class Balle{
     }
 
     //fonction de calcul de deplacement
-    bouger(){
+    bouger(terrain, joueur0, joueur1){
         this.positionX = this.positionX + (this.vitesseXFacteur * this.vitesseXSens);
         this.positionY += (this.vitesseYFacteur * this.vitesseYSens);
-        console.log(this.positionY,this.vitesseYFacteur,this.vitesseYSens)
+        this.rebond(terrain, joueur0, joueur1);
+        this.rebondSurRaquette(raquetteDroite);
+        this.rebondSurRaquette(raquetteGauche);
+        this.majHTML();
     }
 
     //fonction de mise a jour graphique
@@ -107,7 +110,6 @@ class Balle{
                     },200
                     );
                     this.calculVitesseX();
-                    this.vitesseYSens = raquette.calculRebond(this.positionY);
                 }
             }
         }
@@ -127,7 +129,6 @@ class Balle{
                     },200
                     );
                     this.calculVitesseX();
-                    this.vitesseYSens = raquette.calculRebond(this.positionY);
                 }
             }
         }

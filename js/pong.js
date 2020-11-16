@@ -21,17 +21,7 @@ terrain.jouer(joueur0, joueur1, raquetteGauche,raquetteDroite);
 
 //lancement boucle de jeu
 setInterval(function(){
-    balle.bouger();
-    balle.rebond(terrain, joueur0, joueur1);
-    balle.rebondSurRaquette(raquetteDroite);
-    balle.rebondSurRaquette(raquetteGauche);
-    balle.majHTML();
-
+    balle.bouger(terrain, joueur0, joueur1);
     raquetteGauche.bouger(terrain);
     raquetteDroite.bouger(terrain);
-
-    
-    
-    raquetteGauche.majHTML();
-    raquetteDroite.majHTML();
 }, 10);
