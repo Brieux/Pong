@@ -50,8 +50,10 @@ body {
 .raquette{
     /** CSS relatif la classe raquette**/
     position: absolute;
+    --hauteur: 25%;
+    top: calc(50% - var(--hauteur)/2);
     width: 10px;
-    height: 25%;
+    height: var(--hauteur);
     background-color: #ffffff;
 }
 

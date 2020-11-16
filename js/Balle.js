@@ -14,7 +14,7 @@ class Balle{
         this.vitesseYFacteur = 1;
         this.centreX = this.positionX;
         this.centreY = this.positionY
-        
+
     }
 
     //fonction permettant de reset la balle au centre après un point marqué
@@ -44,7 +44,8 @@ class Balle{
     //fonction de calcul de deplacement
     bouger(){
         this.positionX = this.positionX + (this.vitesseXFacteur * this.vitesseXSens);
-        this.positionY = this.positionY + (this.vitesseYFacteur * this.vitesseYSens);
+        this.positionY += (this.vitesseYFacteur * this.vitesseYSens);
+        console.log(this.positionY,this.vitesseYFacteur,this.vitesseYSens)
     }
 
     //fonction de mise a jour graphique
