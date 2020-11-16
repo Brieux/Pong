@@ -11,15 +11,17 @@ class Raquette{
         this.gauche = true; //boolean pour savoir si c'est le joueur de droite ou de gauche(true = joueur de gauche/ false = joueur de droite)
 
     }
-
+    //GETTER AND SETTER
     get bas(){
         return this.positionY + this.hauteur
     }
+
 
     //fonction permettant de definir le joueur (cf constructor)
     checkJoueur(terrain){
         this.gauche = (this.positionX < terrain.largeur / 2);
     }
+
     //fonction permettant de faire bouger les deux raquette de haut en bas automatiquement
     bouger(){
         this.positionY = this.positionY + this.vitesseY;
@@ -60,7 +62,6 @@ class Raquette{
         //50% de la raquette : sens = 3
         //100% de la raquette : sens = 6
         //le tout -3
-        //return ((positionYBalle - this.positionY)*this.hauteur/6)-3;
     }
 
     //fonction de mise a jour graphique de l'objet raquette

@@ -77,6 +77,7 @@ class Balle{
                 },350
             );
             this.retourCentre();
+            
         }
         //rebond sur les plafond et sol
         if(this.positionY <= 0 || this.positionY >= terrain.hauteur-this.rayon){

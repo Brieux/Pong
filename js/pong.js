@@ -13,8 +13,6 @@ joueur1.cote = 1;
 raquetteGauche.checkJoueur(terrain);
 raquetteDroite.checkJoueur(terrain);
 
-raquetteGauche.positionY = terrain.hauteur/2-(raquetteGauche.hauteur/2);
-raquetteDroite.positionY = terrain.hauteur/2-(raquetteDroite.hauteur/2);
 
 //ecoute des touches pour le controles des raquettes
 terrain.jouer(joueur0, joueur1, raquetteGauche,raquetteDroite);
