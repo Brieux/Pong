@@ -16,6 +16,9 @@ raquetteDroite.checkJoueur(terrain);
 raquetteGauche.positionY = terrain.hauteur/2-(raquetteGauche.hauteur/2);
 raquetteDroite.positionY = terrain.hauteur/2-(raquetteDroite.hauteur/2);
 
+//ecoute des touches pour le controles des raquettes
+terrain.jouer(joueur0, joueur1, raquetteGauche,raquetteDroite);
+
 //lancement boucle de jeu
 setInterval(function(){
     balle.bouger();
@@ -27,7 +30,6 @@ setInterval(function(){
     raquetteGauche.bouger(terrain);
     raquetteDroite.bouger(terrain);
 
-    terrain.jouer(joueur0, joueur1, raquetteGauche,raquetteDroite);
     
     
     raquetteGauche.majHTML();

@@ -9,7 +9,9 @@ class Balle{
         this.vitesseXFacteur = 1;
         this.limiteFacteur = 8 //faire en fonction de la largeur du terrain 
         this.vitesseXSens = this.calculAleatoire();
-        this.vitesseY = (Math.random()*2)-1;
+        //this.vitesseYSens = (Math.random()*6) - 3; //entre -3 et 3 : 0 fais du tout droit
+        this.vitesseYSens = 0;
+        this.vitesseYFacteur = 1;
         this.centreX = this.positionX;
         this.centreY = this.positionY
         
@@ -21,7 +23,8 @@ class Balle{
         this.positionY =  this.centreY;
         this.vitesseXSens = this.calculAleatoire();
         this.vitesseXFacteur = 1;
-        this.vitesseY =(Math.random()*2)-1;
+        this.vitesseYSens = (Math.random()*6) - 3;
+        this.vitesseYFacteur =1;
     }
 
     //fonction permettant de definir le sens de depart de la balle aléatoirement
@@ -41,7 +44,7 @@ class Balle{
     //fonction de calcul de deplacement
     bouger(){
         this.positionX = this.positionX + (this.vitesseXFacteur * this.vitesseXSens);
-        this.positionY = this.positionY + this.vitesseY;
+        this.positionY = this.positionY + (this.vitesseYFacteur * this.vitesseYSens);
     }
 
     //fonction de mise a jour graphique
@@ -73,7 +76,7 @@ class Balle{
         }
         //rebond sur les plafond et sol
         if(this.positionY <= 0 || this.positionY >= terrain.hauteur-this.rayon){
-            this.vitesseY = this.vitesseY * (-1);
+            this.vitesseYSens = this.vitesseYSens * (-1);
             terrain.$element.addClass("fluo");
             setTimeout(
                 function(){
@@ -103,6 +106,7 @@ class Balle{
                     },200
                     );
                     this.calculVitesseX();
+                    this.vitesseYSens = raquette.calculRebond(this.positionY);
                 }
             }
         }
@@ -122,6 +126,7 @@ class Balle{
                     },200
                     );
                     this.calculVitesseX();
+                    this.vitesseYSens = raquette.calculRebond(this.positionY);
                 }
             }
         }
