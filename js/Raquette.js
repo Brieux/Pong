@@ -12,8 +12,18 @@ class Raquette{
 
     }
 
+    //getter and setter
     get bas(){
-        return this.positionY + this.hauteur
+        return this.positionY + this.hauteur;
+    }
+    get droite() {
+        return this.positionX + this.largeur;
+    }
+    set bas(value) {
+        this.positionY = value - this.hauteur;
+    }
+    set droite(value) {
+        this.positionX = value - this.largeur;
     }
 
     //fonction permettant de definir le joueur (cf constructor)
