@@ -11,9 +11,10 @@ class Raquette{
         this.gauche = true; //boolean pour savoir si c'est le joueur de droite ou de gauche(true = joueur de gauche/ false = joueur de droite)
 
     }
+
     //GETTER AND SETTER
     get bas(){
-        return this.positionY + this.hauteur
+        return this.positionY + this.hauteur;
     }
     get droite() {
         return this.positionX + this.largeur;
@@ -58,7 +59,7 @@ class Raquette{
             this.vitesseY = 2;
         }
         else{
-            this.positionY = terrain.hauteur - this.hauteur;
+            this.bas = terrain.hauteur - this.hauteur;
             this.arreterDeBouger();
         }
     }

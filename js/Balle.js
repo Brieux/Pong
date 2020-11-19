@@ -16,7 +16,8 @@ class Balle{
         this.centreY = this.positionY
 
     }
-
+    
+    //GETTER AND SETTER
     get bas() {
         return this.positionY + this.rayon;
     }
