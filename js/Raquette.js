@@ -16,15 +16,13 @@ class Raquette{
     get bas(){
         return this.positionY + this.hauteur;
     }
-    get droite() {
+    get droite(){
         return this.positionX + this.largeur;
     }
     set bas(value) {
         this.positionY = value - this.hauteur;
     }
-    set droite(value) {
-        this.positionX = value - this.largeur;
-    }
+
 
     //fonction permettant de definir le joueur (cf constructor)
     checkJoueur(terrain){
@@ -58,7 +56,7 @@ class Raquette{
             this.vitesseY = 2;
         }
         else{
-            this.positionY = terrain.hauteur - this.hauteur;
+            this.bas = terrain.hauteur;
             this.arreterDeBouger();
         }
     }

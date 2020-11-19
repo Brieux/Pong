@@ -19,16 +19,16 @@ class Balle{
 
     //getter and setter
     get bas() {
-        return this.positionY + this.hauteur;
+        return this.positionY + this.rayon;
     }
     get droite() {
-        return this.positionX + this.largeur;
+        return this.positionX + this.rayon;
     }
     set bas(value) {
-        this.positionY = value - this.hauteur;
+        this.positionY = value - this.rayon;
     }
     set droite(value) {
-        this.positionX = value - this.largeur;
+        this.positionX = value - this.rayon;
     }
     //fonction permettant de reset la balle au centre après un point marqué
     retourCentre(){
@@ -73,12 +73,12 @@ class Balle{
     //fonction permettant de faire rebondir la balle sur les mur et de changer la couleur du terrain lors du contact
     rebond(terrain, joueur0, joueur1){
         //impact avec un bords de terrain coté joueur
-        if(this.positionX <= 0 ||this.positionX >= terrain.largeur-this.rayon){
+        if(this.positionX <= 0 ||this.droite >= terrain.largeur){
             if(this.positionX <= 0){
                 joueur1.ajoutScore();
                 console.log("Le joueur de droite marque 1 point");
             }
-            if(this.positionX >= terrain.largeur-this.rayon){
+            if(this.droite >= terrain.largeur){
                 joueur0.ajoutScore();
                 console.log("Le joueur de gauche marque 1 point");
             }
@@ -92,7 +92,7 @@ class Balle{
             this.retourCentre();
         }
         //rebond sur les plafond et sol
-        if(this.positionY <= 0 || this.positionY >= terrain.hauteur-this.rayon){
+        if(this.positionY <= 0 || this.bas >= terrain.hauteur){
             this.vitesseYSens = this.vitesseYSens * (-1);
             terrain.$element.addClass("fluo");
             setTimeout(
@@ -109,10 +109,10 @@ class Balle{
     rebondSurRaquette(raquette){
         //zone pour la raquette de gauche
         if(raquette.gauche){
-            if ((this.positionY >= raquette.positionY)&&(this.positionY <= raquette.positionY + raquette.hauteur)){
+            if ((this.positionY >= raquette.positionY)&&(this.positionY <= raquette.bas)){
                 //console.log("passage dans la raquette de gauche");
-                if (this.positionX<= raquette.positionX + raquette.largeur){
-                   this.positionX = raquette.positionX + raquette.largeur + 1
+                if (this.positionX<= raquette.droite){
+                   this.positionX = raquette.droite + 1
                     this.vitesseXSens = this.vitesseXSens * (-1);
                     /*console.log("rebond sur raquette de gauche");
                     changement de couleur lié a l'impact*/
@@ -128,10 +128,10 @@ class Balle{
         }
         //zone pour la raquette de droite
         else{
-            if ((this.positionY >= raquette.positionY)&&(this.positionY <= raquette.positionY + raquette.hauteur)){
+            if ((this.positionY >= raquette.positionY)&&(this.positionY <= raquette.bas)){
                 //console.log("passage dans la raquette de droite");
-                if (this.positionX+this.rayon > raquette.positionX){
-                    this.positionX = raquette.positionX -this.rayon- 1
+                if (this.droite > raquette.positionX){
+                    this.droite = raquette.positionX- 1
                     this.vitesseXSens = this.vitesseXSens * (-1);
                     /*console.log("rebond sur raquette de droite");
                     changement de couleur lié a l'impact*/
