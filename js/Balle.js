@@ -17,6 +17,19 @@ class Balle{
 
     }
 
+    get bas() {
+        return this.positionY + this.rayon;
+    }
+    get droite() {
+        return this.positionX + this.rayon;
+    }
+    set bas(value) {
+        this.positionY = value - this.rayon;
+    }
+    set droite(value) {
+        this.positionX = value - this.rayon;
+    }
+
     //fonction permettant de reset la balle au centre après un point marqué
     retourCentre(){
         this.positionX =  this.centreX;
