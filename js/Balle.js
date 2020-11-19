@@ -16,20 +16,6 @@ class Balle{
         this.centreY = this.positionY
 
     }
-    
-    //GETTER AND SETTER
-    get bas() {
-        return this.positionY + this.rayon;
-    }
-    get droite() {
-        return this.positionX + this.rayon;
-    }
-    set bas(value) {
-        this.positionY = value - this.rayon;
-    }
-    set droite(value) {
-        this.positionX = value - this.rayon;
-    }
 
     //fonction permettant de reset la balle au centre après un point marqué
     retourCentre(){
@@ -91,7 +77,6 @@ class Balle{
                 },350
             );
             this.retourCentre();
-            
         }
         //rebond sur les plafond et sol
         if(this.positionY <= 0 || this.positionY >= terrain.hauteur-this.rayon){
