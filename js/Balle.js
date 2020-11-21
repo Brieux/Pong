@@ -54,18 +54,13 @@ class Balle{
         else {/*rien car la vitesse ne peux pas depasser la limite*/}
     }
 
-    /**
-     * fonction de calcul de deplacement
-     * @param terrain
-     * @param joueur0
-     * @param joueur1
-     */
-    bouger(){
+    //fonction de calcul de deplacement
+    bouger(terrain, joueur0, joueur1){
         this.positionX = this.positionX + (this.vitesseXFacteur * this.vitesseXSens);
         this.positionY += (this.vitesseYFacteur * this.vitesseYSens);
-        this.rebond();
-        this.rebondSurRaquette();
-        this.rebondSurRaquette();
+        this.rebond(terrain, joueur0, joueur1);
+        this.rebondSurRaquette(raquetteDroite);
+        this.rebondSurRaquette(raquetteGauche);
         this.majHTML();
     }
 
@@ -76,7 +71,7 @@ class Balle{
     }
 
     //fonction permettant de faire rebondir la balle sur les mur et de changer la couleur du terrain lors du contact
-    rebond(){
+    rebond(terrain, joueur0, joueur1){
         //impact avec un bords de terrain coté joueur
         if(this.positionX <= 0 ||this.droite >= terrain.largeur){
             if(this.positionX <= 0){
@@ -111,7 +106,7 @@ class Balle{
     }
 
     //fonction permettant le rebond sur les raquettes
-    rebondSurRaquette(){
+    rebondSurRaquette(raquette){
         //zone pour la raquette de gauche
         if(raquette.gauche){
             if ((this.positionY >= raquette.positionY)&&(this.positionY <= raquette.bas)){
