@@ -22,9 +22,6 @@ class Raquette{
     set bas(value) {
         this.positionY = value - this.hauteur;
     }
-    set droite(value) /*inutile mais important :o */{
-        this.positionX = value - this.largeur;
-    }
 
 
     //fonction permettant de definir le joueur (cf constructor)
