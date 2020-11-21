@@ -7,7 +7,7 @@ class Terrain{
         this.hauteur = $element.height();
     }
 
-    jouer(joueur0, joueur1, raquetteGauche, raquetteDroite){
+    jouer(){
         window.addEventListener("keydown", function (event) {
             if (event.defaultPrevented) { return}
             if(event.key === "a"){

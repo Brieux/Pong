@@ -28,7 +28,7 @@ class Raquette{
 
 
     //fonction permettant de definir le joueur (cf constructor)
-    checkJoueur(terrain){
+    checkJoueur(){
         this.gauche = (this.positionX < terrain.largeur / 2);
     }
     //fonction permettant de faire bouger les deux raquette de haut en bas automatiquement
@@ -66,7 +66,7 @@ class Raquette{
 
 
     //fonction permettant le calcul de l'angle de rebond de la balle en fonction de la raquette
-    calculRebond(positionYBalle){
+    //calculRebond(positionYBalle){
         //0% de la raquette : sens =  0
         //50% de la raquette : sens = 3
         //100% de la raquette : sens = 6
