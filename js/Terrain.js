@@ -1,12 +1,22 @@
 //implementation classe terrain
 class Terrain{
-    //constructeur de la classe Terrain
+    /**
+     * constructeur de la classe Terrain
+     * @param $element
+     */
     constructor($element){
         this.$element = $element;
         this.largeur = $element.width();
         this.hauteur = $element.height();
     }
 
+    /**
+     * fonction d'ecoute des touches
+     * @param joueur0
+     * @param joueur1
+     * @param raquetteGauche
+     * @param raquetteDroite
+     */
     jouer(joueur0, joueur1, raquetteGauche, raquetteDroite){
         window.addEventListener("keydown", function (event) {
             if (event.defaultPrevented) { return}

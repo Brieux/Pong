@@ -1,6 +1,9 @@
 //implementation classe raquette
 class Raquette{
-    //constructeur de la classe Raquette
+    /**
+     * constructeur de la classe Raquette
+     * @param $element
+     */
     constructor($element){
         this.$element = $element;
         this.hauteur = $element.height();
@@ -12,13 +15,22 @@ class Raquette{
 
     }
 
-    //getter and setter
+
+    /**
+     * getter
+     * @returns {*}
+     */
     get bas(){
         return this.positionY + this.hauteur;
     }
     get droite(){
         return this.positionX + this.largeur;
     }
+
+    /**
+     * setter
+     * @param value
+     */
     set bas(value) {
         this.positionY = value - this.hauteur;
     }
@@ -27,22 +39,32 @@ class Raquette{
     }
 
 
-    //fonction permettant de definir le joueur (cf constructor)
+    /**
+     * fonction permettant de definir le joueur (cf constructor)
+     * @param terrain
+     */
     checkJoueur(terrain){
         this.gauche = (this.positionX < terrain.largeur / 2);
     }
-    //fonction permettant de faire bouger les deux raquette de haut en bas automatiquement
+
+    /**
+     * fonction permettant de faire bouger les deux raquette de haut en bas automatiquement
+     */
     bouger(){
         this.positionY = this.positionY + this.vitesseY;
         this.majHTML();
     }
 
-    //fonction permettant d'arreter le deplacement de la raquette
+    /**
+     * fonction permettant d'arreter le deplacement de la raquette
+     */
     arreterDeBouger(){
         this.vitesseY = 0;
     }
 
-    //fonction permettant de faire monter la raquette jusqu'au bord du haut
+    /**
+     * fonction permettant de faire monter la raquette jusqu'au bord du haut
+     */
     monter(){
         if (this.positionY > 0){
             this.vitesseY = -2;
@@ -53,7 +75,9 @@ class Raquette{
         }
     }
 
-    //fonction permettant de faire descendre la raquette jusqu'au bord du haut
+    /**
+     * fonction permettant de faire descendre la raquette jusqu'au bord du haut
+     */
     descendre(){
         if (this.bas < terrain.hauteur){
             this.vitesseY = 2;
@@ -65,7 +89,10 @@ class Raquette{
     }
 
 
-    //fonction permettant le calcul de l'angle de rebond de la balle en fonction de la raquette
+    /**
+     * fonction permettant le calcul de l'angle de rebond de la balle en fonction de la raquette
+     * @param positionYBalle
+     */
     calculRebond(positionYBalle){
         //0% de la raquette : sens =  0
         //50% de la raquette : sens = 3
@@ -74,7 +101,9 @@ class Raquette{
         //return ((positionYBalle - this.positionY)*this.hauteur/6)-3;
     }
 
-    //fonction de mise a jour graphique de l'objet raquette
+    /**
+     * fonction de mise a jour graphique de l'objet raquette
+     */
     majHTML(){
         this.$element.css("left",this.positionX);
         this.$element.css("top",this.positionY);
