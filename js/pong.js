@@ -1,8 +1,8 @@
 //creation des objets
 let terrain = new Terrain($("#terrain"));
 let balle = new Balle($("#balle"));
-let joueur0 = new Joueur();
-let joueur1 = new Joueur();
+let joueur0 = new Joueur($("#Sgauche"));
+let joueur1 = new Joueur($("#Sdroite"));
 let raquetteDroite = new Raquette($("#droite"));
 let raquetteGauche = new Raquette($("#gauche"));
 
