@@ -13,7 +13,6 @@ class Balle{
         this.limiteFacteur = 8 //faire en fonction de la largeur du terrain 
         this.vitesseXSens = this.calculAleatoire();
         this.vitesseYSens = (Math.random()*6) - 3; //entre -3 et 3 : 0 fais du tout droit
-        //this.vitesseYSens = 0;
         this.vitesseYFacteur = 1;
         this.centreX = this.positionX;
         this.centreY = this.positionY
@@ -157,6 +156,7 @@ class Balle{
                     },200
                     );
                     this.calculVitesseX();
+                    this.vitesseYSens = raquette.calculRebond(this.positionY);
                 }
             }
         }
@@ -176,6 +176,7 @@ class Balle{
                     },200
                     );
                     this.calculVitesseX();
+                    this.vitesseYSens = raquette.calculRebond(this.positionY);
                 }
             }
         }

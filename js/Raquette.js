@@ -99,6 +99,16 @@ class Raquette{
         //100% de la raquette : sens = 6
         //le tout -3
         //return ((positionYBalle - this.positionY)*this.hauteur/6)-3;
+
+        /*Resultat de debug
+        console.log("positionYBalle : " , positionYBalle);
+        console.log("this.positionY : " , this.positionY);
+        console.log("this.hauteur : " , this.hauteur);
+        console.log("position relative : " , positionYBalle - this.positionY);
+        console.log("Position relative * 100 : ",(positionYBalle - this.positionY)*6);
+        console.log("Regle de 3 entre 0 et 6 " , ((positionYBalle - this.positionY)*6/100));
+         */
+        return (((positionYBalle - this.positionY)*6/100)-3);
     }
 
     /**
