@@ -71,6 +71,12 @@ class Raquette{
         //50% de la raquette : sens = 3
         //100% de la raquette : sens = 6
         //le tout -3
+        console.log("On est la");
+        console.log ("pos balle :",positionYBalle);
+        console.log("pos raquette :",this.positionY);
+        console.log("pos relative :",positionYBalle-this.positionY);
+        console.log("hauteur raquette:",this.hauteur);
+        console.log(((positionYBalle - this.positionY)*this.hauteur/6)-3);
         //return ((positionYBalle - this.positionY)*this.hauteur/6)-3;
     }
 
