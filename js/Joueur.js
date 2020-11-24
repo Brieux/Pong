@@ -14,6 +14,8 @@ class Joueur{
      */
     ajoutScore(){
         this.score += 1;
+        this.$element.slideUp(10);
         this.$element.text(this.score);
+        this.$element.slideDown();
     }
 }
