@@ -1,6 +1,4 @@
 
-
-//if (lance){
 //creation des objets
     let terrain = new Terrain($("#terrain"));
     let balle = new Balle($("#balle"));
@@ -25,11 +23,13 @@
     /**
      * lancement boucle de jeu
      */
-    //let lance = false
-    ($(".btn")).click(function () {
-        var $this = $("#titre");
-        $this.addClass('invisible');
-        //lance = true
+
+
+    let iDsonA = "sound/piano_G.mp3";
+    createjs.Sound.registerSound("sound/piano_G.mp3", iDsonA);
+    $(".btn").click(function () {
+        $("#titre").addClass('invisible');
+        createjs.Sound.play(iDsonA);
         setInterval(function () {
             balle.bouger(terrain, joueur0, joueur1);
             raquetteGauche.bouger(terrain);

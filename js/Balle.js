@@ -158,6 +158,7 @@ class Balle{
                     );
                     this.calculVitesseX();
                     this.vitesseYSens = raquette.calculRebond(this.positionY);
+                    this.joueSon();
                 }
             }
         }
@@ -178,8 +179,16 @@ class Balle{
                     );
                     this.calculVitesseX();
                     this.vitesseYSens = raquette.calculRebond(this.positionY);
+                    this.joueSon();
                 }
             }
+        }
+
     }
-}
+
+    joueSon(){
+        let iDsonB = "sound/piano_B.mp3";
+        createjs.Sound.registerSound("sound/piano_B.mp3", iDsonB);
+        createjs.Sound.play(iDsonB);
+    }
 }
