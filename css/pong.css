@@ -11,6 +11,20 @@ body {
     align-items: center;
     text-align: center;
 }
+
+#titre{
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 50px;
+    z-index: 1;
+}
+
+.invisible{
+    opacity: 0;
+}
 .btn{
     background:linear-gradient(to bottom, #eae0c2 5%, #ccc2a6 100%);
     background-color:#eae0c2;
