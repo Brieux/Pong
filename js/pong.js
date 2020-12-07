@@ -1,9 +1,4 @@
-//let lance = false
-($(".btn")).click(function () {
-    var $this = $("#titre");
-    $this.addClass('invisible');
-    //lance = true
-});
+
 
 //if (lance){
 //creation des objets
@@ -30,8 +25,16 @@
     /**
      * lancement boucle de jeu
      */
-    setInterval(function () {
-        balle.bouger(terrain, joueur0, joueur1);
-        raquetteGauche.bouger(terrain);
-        raquetteDroite.bouger(terrain);
-    }, 10);
+    //let lance = false
+    ($(".btn")).click(function () {
+        var $this = $("#titre");
+        $this.addClass('invisible');
+        //lance = true
+        setInterval(function () {
+            balle.bouger(terrain, joueur0, joueur1);
+            raquetteGauche.bouger(terrain);
+            raquetteDroite.bouger(terrain);
+        }, 10);
+    });
+
+

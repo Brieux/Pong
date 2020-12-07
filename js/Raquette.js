@@ -67,7 +67,7 @@ class Raquette{
      */
     monter(){
         if (this.positionY > 0){
-            this.vitesseY = -2;
+            this.vitesseY = -3;
         }
         else{
             this.positionY = 0;
@@ -80,7 +80,7 @@ class Raquette{
      */
     descendre(){
         if (this.bas < terrain.hauteur){
-            this.vitesseY = 2;
+            this.vitesseY = 3;
         }
         else{
             this.bas = terrain.hauteur;
